@@ -4,19 +4,25 @@
     "express": "^4.18.1",
     "lodash": "^4.17.21",
     "mongodb": "^4.8.1",
-    "prompt": "^1.3.0"
-  },
-  "name": "memberRegister",
-  "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "type": "module",
+  "name": "member_register",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nennae/member_register.git"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "type": "module"
+  "bugs": {
+    "url": "https://github.com/Nennae/member_register/issues"
+  },
+  "homepage": "https://github.com/Nennae/member_register#readme"
 }

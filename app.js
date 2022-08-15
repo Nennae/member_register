@@ -15,7 +15,7 @@ const db = client.db('members');
 const memberList = db.collection('users');
 
 app.get('/users', async (req, res) => {
-      const users = await memberList.find({}).toArray();
+      const users = await memberList.find({name}).toArray();
       res.json(users);
 });
 
