@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+      <!-- Head / Metadata -->
+      <%- include('./partials/head.ejs') %>
+<body>
+      <!-- Header / Navigation -->
+      <%- include('./partials/nav.ejs') %> 
+      <form class="register-form">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <label for="mail">Mail</label>
+            <input type="text" id="mail">
+            <label for="phone">Phone</label>
+            <input type="number" id="phone">
+            <label for="secret">Tell us your secret</label>
+            <textarea name="secret" id="secret" cols="30" rows="10" placeholder="type here..."></textarea>
+      </form>
+      <!-- Footer -->
+      <%- include('./partials/footer.ejs') %>
+</body>
+</html>
