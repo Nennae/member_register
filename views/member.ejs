@@ -5,6 +5,14 @@
 <body>
       <!-- Header / Navigation -->
       <%- include('./partials/nav.ejs') %> 
+<div class="member-info">
+      <p class="member-name">Name: <%= name %></p>
+      <p class="member-mail">E-mail: <%= mail %></p>
+      <p class="member-phone">Phone: <%= phone %></p>
+      <p class="member-phone">Member since: <%= createdAt %></p>
+      <p class="member-secret">Secret: <%= secret %></p>
+</div>
+<button class="delete" onclick="location.href= '/member/<%= id %>/delete';">Delete Member</button>
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>
 </body>

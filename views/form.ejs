@@ -5,15 +5,20 @@
 <body>
       <!-- Header / Navigation -->
       <%- include('./partials/nav.ejs') %> 
-      <form class="register-form">
+      <form action="/members/form" method="post" class="register-form">
             <label for="name">Name</label>
-            <input type="text" id="name">
+            <input type="text" id="name" name="name">
+            <br>
             <label for="mail">Mail</label>
-            <input type="text" id="mail">
+            <input type="text" name="mail" id="mail">
+            <br>
             <label for="phone">Phone</label>
-            <input type="number" id="phone">
+            <input type="number" name="phone" id="phone">
+            <br>
             <label for="secret">Tell us your secret</label>
+            <br>
             <textarea name="secret" id="secret" cols="30" rows="10" placeholder="type here..."></textarea>
+            <button class="save-btn">Save</button>
       </form>
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,9 @@
+use secretClub
+
+db.members.insertMany([
+  { name:'Member1', mail: 'member1@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.' },
+  { name: 'Member2', mail: 'member2@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.'},
+  { name: 'Member3', mail: 'member3@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.'},
+  { name: 'Member4', mail: 'member4@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.'},
+  { name: 'Member5', mail: 'member5@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.'}
+])

@@ -8,15 +8,10 @@
       <section class="member-list">
             <h2 class="page-title">All Members</h2>
             <% users.forEach((user) => {%>
-                  <div class="member-info">
-                        <h3 class="member-name"><%= user.name %></h3>
-                        <p class="member-mail">E-mail: <%= user.mail %></p>
-                        <p class="member-phone">Phone: <%= user.phone %></p>
-                        <p class="member-phone">Member since: <%= user.createdAt %></p>
-                        <p class="member-secret">Secret: <%= user.secret %></p>
+                  <div class="members-name">
+                        <p class="member-name"><a href="/member/<%= user._id %>"><%= user.name %></a></p>
                         <% }); %>
                   </div>
-            })
       </section>
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>
