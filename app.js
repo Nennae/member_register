@@ -17,12 +17,12 @@ const memberList = db.collection('members');
 
 
 app.get('/', (req, res) => {
-      res.render('index');
+      res.render('index', {title: 'Home'});
 })
 
 app.get('/members', async (req, res) => {
       const users = await memberList.find({}).toArray();
-      res.render('members', {users});
+      res.render('members', {users, title: 'Members'});
 });
 
 app.get('/member/:id', async (req, res) => {
@@ -33,7 +33,8 @@ app.get('/member/:id', async (req, res) => {
             phone: member.phone,
             createdAt: member.createdAt,
             secret: member.secret,
-            id: member._id
+            id: member._id,
+            title: 'Member'
       });
 });
 
@@ -42,20 +43,47 @@ app.get('/member/:id/delete', async (req, res) => {
       res.redirect('/members');
 });
 
+app.get('/member/:id/update', async (req, res) => {
+      const member = await memberList.findOne({ _id: ObjectId(req.params.id) });
+      res.render('update', {
+            name: member.name,
+            mail: member.mail,
+            phone: member.phone,
+            createdAt: member.createdAt,
+            secret: member.secret,
+            id: member._id,
+            title: 'Update'
+      });
+});
+
+app.post('/member/:id/update/save', (req, res) => {
+      memberList.findOneAndUpdate({ _id: ObjectId(req.params.id) }, {
+            $set: {
+                  name: req.body.name,
+                  mail: req.body.mail,
+                  phone: req.body.phone,
+                  createdAt: req.body.createdAt,
+                  secret: req.body.secret
+            }
+      });
+            res.redirect('/members');
+      });
+
 app.get('/form', (req, res) => {
-      res.render('form');
+      res.render('form', {title: 'Register'});
 })
 
 app.post('/members/form', async (req, res) => {
       await memberList.insertOne(req.body);
       res.redirect('/members');
 });
+
 app.get('/members/form', (req, res) => {
       res.render('form');
 });
 
-// app.use((req, res) => {
-//       res.status(404).render('404');
-// })
+app.use((req, res) => {
+      res.status(404).render('404');
+})
 
 app.listen(port, () => console.log(`Listening on ${port}`));

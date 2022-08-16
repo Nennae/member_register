@@ -6,25 +6,26 @@
       <!-- Header / Navigation -->
       <%- include('./partials/nav.ejs') %> 
 
-      <h2 class="register-title">Become a member below</h2>
-      <form action="/members/form" method="post" class="register-form">
+      <h2 class="update-title">Update your info below</h2>
+      <form action="/member/<%= id %>/update/save" method="post" class="update-form">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="<%=name %>" required>
             <br>
             <label for="mail">Mail</label>
-            <input type="text" name="mail" id="mail" required>
+            <input type="text" name="mail" id="mail" value="<%=mail %>" required>
             <br>
             <label for="phone">Phone</label>
-            <input type="tel" name="phone" id="phone" required>
+            <input type="tel" name="phone" id="phone" value="<%=phone %>" required>
             <br>
             <label for="createdAt">Member since</label>
-            <input type="date" name="createdAt" id="createdAt" required>
+            <input type="date" name="createdAt" id="createdAt" value="<%=phone %>" required>
             <br>
             <label for="secret">Tell us your secret</label>
             <br>
-            <textarea name="secret" id="secret" cols="30" rows="10" placeholder="type here..." required></textarea>
+            <textarea name="secret" id="secret" cols="30" rows="10" required><%=secret %></textarea>
             <button class="save-btn">Save</button>
       </form>
+
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>
 </body>
