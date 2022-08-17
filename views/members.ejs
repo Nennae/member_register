@@ -5,13 +5,28 @@
 <body>
       <!-- Header / Navigation -->
       <%- include('./partials/nav.ejs') %> 
+      <h2 class="page-title">All Members</h2>
+      
       <section class="member-list">
-            <h2 class="page-title">All Members</h2>
-            <% users.forEach((user) => {%>
-                  <div class="members-name">
-                        <p class="member-name"><a href="/member/<%= user._id %>"><%= user.name %></a></p>
-                        <% }); %>
+            <div class="sort-btns">
+            <button onclick="location.href= '/members/ascend/';">Sort A-Ö</button>
+            <button onclick="location.href= '/members/descend/';">Sort Ö-A</button>
+            <button onclick="location.href= '/members/';">Default</button>
+            </div>
+                  <div class="member-box">
+                              <% members.forEach((member) => {%>
+                  <div class="member-info">
+                  <div class="img-div">
+                        <a href="/member/<%= member._id %>">
+                  <img class="profile-img" src="http://localhost:3000/profile-placeholder.png" alt="profile picture" width="50">
+                        </a>
                   </div>
+            <div class="name-div">
+                  <p class="member-name"><a class="name-link" href="/member/<%= member._id %>"><%= member.name %></a></p>
+            </div>
+      </div>
+            <% }); %>   
+      </div>
       </section>
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>

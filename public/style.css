@@ -1,28 +1,231 @@
-/* * {
+* {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-} */
+}
 
+body {
+      font-family: 'Montserrat', sans-serif;
+}
+
+/* HEADER */
 .nav-bar {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-transform: uppercase;
+      margin-bottom: 50px;
 }
 .site-title {
       text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 2rem;
       padding: 20px;
+      margin-bottom: 20px;
 }
 
 .page-links {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.25rem;
+}
+
+.link:hover, .link:active {
+      padding-bottom: 10px;
+      border-bottom: 5px solid rgba(80, 80, 82, 0.7);
+      transition: ease-in-out 0.3s;
 }
 
 .page-links li, a {
       list-style: none;
       text-decoration: none;
       color: rgb(80, 80, 82);
+}
+
+/* STARTPAGE */
+.page-text {
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.4rem;
+      color: white;
+      background: rgb(32, 32, 32);
+      padding: 30px 0;
+}
+.img-box {
+      max-height: 240px;
+      max-height: 100%;
+}
+
+.banner {
+      width: 100%;
+}
+
+/* MEMBERS */
+.sort-btns {
+      margin: 40px 0 20px 50px;
+}
+.sort-btns button {
+      padding: 5px;
+      margin-right: 5px;
+      border: 1px solid rgba(80, 80, 82, 0.7);
+      border-radius: 5px;
+      background: white;
+}
+.sort-btns button:hover, .sort-btns button:active {
+      border: 1px solid red;
+}
+
+/* .page-title {
+      margin: 70px 0 50px 10px;
+      padding-bottom: 20px;
+      border-bottom: 5px solid rgba(80, 80, 82, 0.7);
+      width: 160px;
+} */
+.member-list {
+      margin: 0 auto;
+      line-height: 2rem;
+      max-width: 80%;
+}
+.member-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: center;
+}
+.member-info {
+      display: flex;
+      flex-direction: column;
+}
+.img-div {
+      width: 300px;
+}
+.profile-img {
+      width: 100%;
+}
+.member-name {
+      margin-bottom: 30px;
+      font-size: 1.3rem;
+}
+.name-link:hover, .name-link:active {
+      padding-bottom: 10px;
+      border-bottom: 5px solid rgba(80, 80, 82, 0.7);
+      transition: ease-in-out 0.3s;
+}
+
+/* MEMBER */
+.name {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      background: rgb(32, 32, 32);
+      margin: 0 auto;
+      padding: 15px 50px;
+      line-height: 3rem;
+}
+.member-container {
+
+}
+.memberInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+      max-width: 500px;
+      margin: 30px auto;
+}
+.member {
+      font-size: 1.15rem;
+}
+span {
+      display: block;
+      padding: 7px;
+      margin: 10px 0;
+      border: 1px solid rgba(80, 80, 82, 0.7);
+      border-radius: 5px;
+}
+.btn-box {
+      margin-top: 0 auto;
+      width: 100%;
+      max-width: 500px;
+
+}
+.member-btn {
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 100%;
+}
+.update {
+      border: 1px solid rgb(248, 181, 173);
+      background: rgb(252, 208, 202);
+}
+.update:hover, .update:active {
+      background:rgb(248, 181, 173);;
+}
+.delete {
+      border: 1px solid rgb(131, 197, 247);
+      background: rgb(197, 227, 250);
+}
+.delete:hover, .delete:active {
+      background:rgb(131, 197, 247);
+}
+
+/* FORMS: REGISTER + UPDATE */
+.register-title, .update-title, .page-title {
+      text-align: center;
+      font-size: 1.4rem;
+      color: white;
+      background: rgb(32, 32, 32);
+      padding: 30px 0;
+}
+.form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+      max-width: 500px;
+      margin: 30px auto;
+}
+input, textarea {
+      padding: 7px;
+      border-radius: 5px;
+      border: 1px solid rgba(80, 80, 82, 0.7);
+}
+label {
+      margin-bottom: 10px;
+}
+.save-btn {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid rgb(248, 181, 173);
+      background: rgb(252, 208, 202);
+      margin-top: 10px;
+}
+.save-btn:hover, .save-btn:active {
+      background: rgb(247, 160, 149);
+      transition: ease-in-out;
+}
+
+/* FOOTER */
+.footer {
+      background: rgb(223, 223, 226);
+      padding: 40px 10px;
+      font-size: 0.8rem;
+}
+.copyright {
+      text-align: center;
+      margin: 30px 0;
+}
+
+.contact-box {
+      display: flex;
+      justify-content: space-around;
+}
+
+.footer-link {
+      list-style: none;
+      width: 130px;
 }

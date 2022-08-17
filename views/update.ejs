@@ -7,7 +7,7 @@
       <%- include('./partials/nav.ejs') %> 
 
       <h2 class="update-title">Update your info below</h2>
-      <form action="/member/<%= id %>/update/save" method="post" class="update-form">
+      <form action="/member/<%= id %>/update/save" method="post" class="update-form form">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="<%=name %>" required>
             <br>
@@ -21,7 +21,6 @@
             <input type="date" name="createdAt" id="createdAt" value="<%=phone %>" required>
             <br>
             <label for="secret">Tell us your secret</label>
-            <br>
             <textarea name="secret" id="secret" cols="30" rows="10" required><%=secret %></textarea>
             <button class="save-btn">Save</button>
       </form>

@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/members', async (req, res) => {
-      const users = await memberList.find({}).toArray();
-      res.render('members', {users, title: 'Members'});
+      const members = await memberList.find({}).toArray();
+      res.render('members', {members, title: 'Members'});
 });
 
 app.get('/member/:id', async (req, res) => {
@@ -37,6 +37,21 @@ app.get('/member/:id', async (req, res) => {
             title: 'Member'
       });
 });
+
+app.get('/members', async (req, res) => {
+      const members = await memberList.find({}).toArray();
+      res.render('members', { members })
+})
+
+app.get('/members/ascend', async (req, res) => {
+      const members = await memberList.find({}, {"title": 1, _id: 0}).sort({"name": 1}).toArray();
+      res.render('members', { members, title:'members'})
+})
+
+app.get('/members/descend', async (req, res) => {
+      const members = await memberList.find({}, {"title": 1, _id: 0}).sort({"name": -1}).toArray();
+      res.render('members', { members, title:'members'});
+})
 
 app.get('/member/:id/delete', async (req, res) => {
       await memberList.deleteOne({ _id: ObjectId(req.params.id) });

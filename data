@@ -8,4 +8,4 @@ db.members.insertMany([
   { name: 'Member5', mail: 'member5@mail.com', phone: '1234567', createdAt: new Date(), secret:'Lorem ipsum dolor, sit amet.'}
 ])
 
-db.members.updateOne({createdAt: ISODate()}, {$set: {"createdAt":"new Date()"}})
+db.members.remove({"name": { "$exists": false }})

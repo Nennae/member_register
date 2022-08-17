@@ -5,15 +5,26 @@
 <body>
       <!-- Header / Navigation -->
       <%- include('./partials/nav.ejs') %> 
-<div class="member-info">
-      <p class="member-name">Name: <%= name %></p>
-      <p class="member-mail">E-mail: <%= mail %></p>
-      <p class="member-phone">Phone: <%= phone %></p>
-      <p class="member-phone">Member since: <%= createdAt %></p>
-      <p class="member-secret">Secret: <%= secret %></p>
+
+      <p class="name">Welcome to the page of <%= name %></p>
+      <section class="member-container">
+<div class="memberInfo">
+            <p class="m-name">Name<br>
+            <span><%= name %></span></p>
+      <p class="member-mail">E-mail<br>
+            <span><%= mail %></span></p>
+      <p class="member-phone">Phone<br>
+            <span><%= phone %></p>
+      <p class="member-phone">Member since<br>
+            <span><%= createdAt %></span></p>
+      <p class="member-secret">Secret<br>
+            <span><%= secret %></span></p>
+            <div class="btn-box">
+                  <button class="delete member-btn" onclick="location.href= '/member/<%= id %>/delete';">Delete</button>
+                  <button class="update member-btn" onclick="location.href= '/member/<%= id %>/update';">Update</button>
+                  </div>
 </div>
-<button class="delete" onclick="location.href= '/member/<%= id %>/delete';">Delete Member</button>
-<button class="update" onclick="location.href= '/member/<%= id %>/update';">Update Member</button>
+</section>
       <!-- Footer -->
       <%- include('./partials/footer.ejs') %>
 </body>
